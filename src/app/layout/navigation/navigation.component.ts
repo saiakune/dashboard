@@ -22,7 +22,7 @@ export class NavigationComponent {
 
   ngOnInit(): void {
     this.http
-      .get<{ navigation: NavItem[] }>('/assets/mock/header.json')
+      .get<{ navigation: NavItem[] }>('assets/mock/header.json')
       .subscribe({
         next: (res) => {
           this.navItems = res.navigation;

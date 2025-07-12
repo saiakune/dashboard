@@ -87,7 +87,7 @@ export class WinnabilityComponent implements OnInit {
   }
 
   fetchWinnabilityData(): Observable<{ winnability: WinnabilityData }> {
-    return this.http.get<{ winnability: WinnabilityData }>('/assets/mock/account-details.json');
+    return this.http.get<{ winnability: WinnabilityData }>('assets/mock/account-details.json');
   }
 
   getStars(rating: number): StarRating[] {

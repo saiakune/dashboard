@@ -32,7 +32,7 @@ export class MarketIntelligenceComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get<MarketIntelligence>('/assets/mock/dashboard.json')
+      .get<MarketIntelligence>('assets/mock/dashboard.json')
       .subscribe((data) => {
         this.title = data.marketIntelligence.title;
         this.items = data.marketIntelligence.items;

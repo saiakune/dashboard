@@ -28,7 +28,7 @@ export class QuickActionsComponent {
 
   ngOnInit(): void {
     this.http
-      .get<DashboardData>('/assets/mock/dashboard.json')
+      .get<DashboardData>('assets/mock/dashboard.json')
       .subscribe((data) => {
         this.title = data.quickActions.title;
         this.actions = data.quickActions.items;

@@ -31,7 +31,7 @@ export class PortfolioGoalsComponent implements OnInit {
 
   ngOnInit() {
     this.http
-      .get<PortfolioGoals>('/assets/mock/dashboard.json')
+      .get<PortfolioGoals>('assets/mock/dashboard.json')
       .subscribe((data) => {
         this.goals = data.portfolioGoals.tabs;
       });

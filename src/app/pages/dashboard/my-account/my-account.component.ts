@@ -46,7 +46,7 @@ export class MyAccountComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<MyAccountsData>('/assets/mock/dashboard.json').subscribe({
+    this.http.get<MyAccountsData>('assets/mock/dashboard.json').subscribe({
       next: (data) => {
         this.title = data.myAccounts.title;
         this.filters = data.myAccounts.filters;

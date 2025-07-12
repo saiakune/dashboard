@@ -20,7 +20,7 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.http
-      .get<{ header: HeaderData }>('/assets/mock/header.json')
+      .get<{ header: HeaderData }>('assets/mock/header.json')
       .subscribe({
         next: (res) => {
           this.data = res.header;

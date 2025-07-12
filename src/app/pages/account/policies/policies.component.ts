@@ -27,7 +27,7 @@ export class PoliciesComponent {
 
   ngOnInit() {
     this.http
-      .get<{ policies: Policy[] }>('/assets/mock/account-details.json')
+      .get<{ policies: Policy[] }>('assets/mock/account-details.json')
       .subscribe((data) => {
         this.policies = data.policies.map((policy) => ({
           ...policy,

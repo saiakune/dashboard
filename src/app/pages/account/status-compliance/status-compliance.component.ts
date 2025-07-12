@@ -34,7 +34,7 @@ export class StatusComplianceComponent {
 
   ngOnInit(): void {
     this.http
-      .get<StatusComplianceData>('/assets/mock/account-details.json')
+      .get<StatusComplianceData>('assets/mock/account-details.json')
       .subscribe((data) => {
         this.accountStatus = data.accountStatus;
         this.complianceItems = data.complianceItems;

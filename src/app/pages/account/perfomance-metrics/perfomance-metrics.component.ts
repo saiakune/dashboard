@@ -57,7 +57,7 @@ export class PerfomanceMetricsComponent implements OnInit {
   ngOnInit(): void {
     this.http
       .get<{ performanceMetrics: PerformanceMetrics }>(
-        '/assets/mock/account-details.json'
+        'assets/mock/account-details.json'
       )
       .subscribe({
         next: (data) => {

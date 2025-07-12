@@ -7,6 +7,6 @@ export class LayoutDataService {
   constructor(private http: HttpClient) {}
 
   getLayoutData(): Observable<any> {
-    return this.http.get('/assets/mock/header.json');
+    return this.http.get('assets/mock/header.json');
   }
 }

@@ -42,7 +42,7 @@ export class WorkQueueComponent implements OnInit {
   isLoading = true;
 
   ngOnInit(): void {
-    this.http.get<any>('/assets/mock/dashboard.json').subscribe({
+    this.http.get<any>('assets/mock/dashboard.json').subscribe({
       next: (data) => {
         const workQueue = data.workQueue || {};
 

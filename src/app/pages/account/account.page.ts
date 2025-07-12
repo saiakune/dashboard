@@ -51,7 +51,7 @@ export class AccountPage implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any>('/assets/mock/account-details.json').subscribe({
+    this.http.get<any>('assets/mock/account-details.json').subscribe({
       next: (data) => {
         this.accountInfo = data.accountInfo;
         this.attentionCard = data.attentionCard;

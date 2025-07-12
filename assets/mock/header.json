@@ -1,0 +1,17 @@
+{
+  "header": {
+    "username": "Arthur",
+    "initials": "AR",
+    "openTasks": 12,
+    "searchPlaceholder": "Search"
+  },
+  "navigation": [
+    { "label": "Dashboard", "link": "/dashboard", "icon": "fa-house" },
+    { "label": "Accounts", "link": "/account", "icon": "fa-database" },
+    { "label": "Brokers", "link": "/rokers", "icon": "fa-user" },
+    { "label": "Submissions", "link": "/submissions", "icon": "fa-file-import" },
+    { "label": "Organizations", "link": "/organizations", "icon": "fa-building" },
+    { "label": "Goals & Rules", "link": "/rules", "icon": "fa-bullseye" },
+    { "label": "Admin", "link": "/admin", "icon": "fa-key" }
+  ]
+}

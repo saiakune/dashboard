@@ -1,0 +1,297 @@
+{
+  "workQueue": {
+    "columns": [
+      { "key": "assignee", "label": "Originator" },
+      { "key": "company", "label": "Client/Line" },
+      { "key": "type", "label": "Type" },
+      { "key": "status", "label": "Status" },
+      { "key": "created", "label": "Created" },
+      { "key": "", "label": "" }
+    ],
+    "tabs": [
+      {
+        "id": "assigned",
+        "label": "Assigned to me",
+        "count": 3,
+        "active": true
+      },
+      {
+        "id": "pending",
+        "label": "Pending Review",
+        "count": 1,
+        "active": false
+      },
+      { "id": "referrals", "label": "Referrals", "count": 2, "active": false }
+    ],
+    "items": [
+      {
+        "id": "1",
+        "assignee": "Sam Masters",
+        "company": "NAMIC Tech Solutions",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "04/16/2020",
+        "avatar": "SM",
+        "tab": "assigned"
+      },
+      {
+        "id": "2",
+        "assignee": "Annemarie Willis",
+        "company": "Maritime Logistics Corp",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "04/20/2020",
+        "avatar": "AW",
+        "tab": "assigned"
+      },
+      {
+        "id": "3",
+        "assignee": "Deirdre Davenport",
+        "company": "GreenField Energy Ltd",
+        "type": "Loss Control Request",
+        "status": "New",
+        "created": "04/16/2020",
+        "avatar": "DD",
+        "tab": "assigned"
+      },
+      {
+        "id": "4",
+        "assignee": "Ana Khan",
+        "company": "NorthStar Financial Group",
+        "type": "Underwriter Referral",
+        "status": "Pending Review",
+        "created": "04/23/2020",
+        "avatar": "AK",
+        "tab": "pending"
+      },
+      {
+        "id": "5",
+        "assignee": "Ana Khan",
+        "company": "Aurora Healthcare Solutions",
+        "type": "Email",
+        "status": "Completed",
+        "created": "04/20/2020",
+        "avatar": "AK",
+        "tab": "referrals"
+      },
+      {
+        "id": "6",
+        "assignee": "Me",
+        "company": "QuantumTech Industries",
+        "type": "Email",
+        "status": "Completed",
+        "created": "04/20/2020",
+        "avatar": "ME",
+        "tab": "referrals"
+      },
+      {
+        "id": "7",
+        "assignee": "John Smith",
+        "company": "Alpha Logistics",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "05/01/2020",
+        "avatar": "JS",
+        "tab": "assigned"
+      },
+      {
+        "id": "8",
+        "assignee": "Maria Lopez",
+        "company": "Beta Technologies",
+        "type": "Loss Control Request",
+        "status": "Pending Review",
+        "created": "05/02/2020",
+        "avatar": "ML",
+        "tab": "pending"
+      },
+      {
+        "id": "9",
+        "assignee": "James Williams",
+        "company": "Gamma Corp",
+        "type": "Email",
+        "status": "Completed",
+        "created": "05/03/2020",
+        "avatar": "JW",
+        "tab": "referrals"
+      },
+      {
+        "id": "10",
+        "assignee": "Sarah Johnson",
+        "company": "Delta Inc",
+        "type": "Underwriter Referral",
+        "status": "New",
+        "created": "05/04/2020",
+        "avatar": "SJ",
+        "tab": "assigned"
+      },
+      {
+        "id": "11",
+        "assignee": "Chris Evans",
+        "company": "Epsilon LLC",
+        "type": "Loss Control Request",
+        "status": "Pending Review",
+        "created": "05/05/2020",
+        "avatar": "CE",
+        "tab": "pending"
+      },
+      {
+        "id": "12",
+        "assignee": "Patricia Brown",
+        "company": "Zeta Solutions",
+        "type": "Email",
+        "status": "Completed",
+        "created": "05/06/2020",
+        "avatar": "PB",
+        "tab": "referrals"
+      }
+    ]
+  },
+
+  "portfolioGoals": {
+    "tabs": [
+      {
+        "title": "PORTFOLIO LOSS RATIO TARGET",
+        "target": "55%",
+        "value": "48.2%",
+        "percentage": 48.2,
+        "diff": "-6.8% (GOOD)",
+        "status": "GOOD"
+      },
+      {
+        "title": "RENEWAL RETENTION",
+        "target": "85-90%",
+        "value": "88%",
+        "percentage": 88,
+        "diff": "",
+        "status": "ON TARGET"
+      },
+      {
+        "title": "NEW BUSINESS TARGET",
+        "target": "$12M",
+        "value": "$8.1M",
+        "percentage": 67.5,
+        "status": ""
+      },
+      {
+        "title": "ANNUAL GWP TARGET",
+        "target": "$42M",
+        "value": "$28.4M",
+        "percentage": 67.6,
+        "status": ""
+      }
+    ]
+  },
+
+  "quickActions": {
+    "title": "Quick Actions",
+    "items": [
+      { "id": "new-submission", "label": "New Submission" },
+      { "id": "quote-builder", "label": "Quote Builder" },
+      { "id": "risks-models", "label": "Risks Models" },
+      { "id": "documents-upload", "label": "Documents Upload" }
+    ]
+  },
+  "marketIntelligence": {
+    "title": "Market intelligence",
+    "items": [
+      {
+        "id": "1",
+        "title": "Rate hardening in Cyber market - +15% YoY",
+        "color": "red",
+        "content": "Detailed info about rate hardening..."
+      },
+      {
+        "id": "2",
+        "title": "New capacity entering Marine market",
+        "color": "yellow",
+        "content": "Details about new capacity..."
+      },
+      {
+        "id": "3",
+        "title": "Environmental regulatory changes in CA",
+        "color": "blue",
+        "content": "Details on environmental changes..."
+      }
+    ]
+  },
+  "myAccounts": {
+    "title": "My Accounts",
+    "filters": ["Filter", "Sort", "Group", "Export"],
+    "tableHeaders": [
+      "Account Name/Type",
+      "Line",
+      "Broker",
+      "Renewal Date",
+      "Premium",
+      "Rated Premium",
+      "Loss Ratio",
+      "Appetite",
+      "Status",
+      "Triage",
+      "Winnability",
+      ""
+    ],
+    "accounts": [
+      {
+        "id": "1",
+        "companyName": "NAMEX Tech Solutions",
+        "type": "Large Enterprise",
+        "line": "D&O Liability",
+        "broker": "Willis Towers",
+        "renewalDate": "04/16/2025",
+        "premium": "$2.3M",
+        "ratedPremium": "$2.8M",
+        "lossRatio": "32%",
+        "appetite": "HIGH",
+        "status": "Active",
+        "triage": 180,
+        "winnability": "Strong"
+      },
+      {
+        "id": "2",
+        "companyName": "Alliance Healthcare Systems",
+        "type": "Mid-Market",
+        "line": "Medical Malpractice",
+        "broker": "Aon Risk",
+        "renewalDate": "06/30/2025",
+        "premium": "$1.7M",
+        "ratedPremium": "$1.9M",
+        "lossRatio": "38%",
+        "appetite": "MEDIUM",
+        "status": "Under review",
+        "triage": 165,
+        "winnability": "Strong"
+      },
+      {
+        "id": "3",
+        "companyName": "Maritime Logistics Corp",
+        "type": "Shipping/Logistics",
+        "line": "Marine Cargo",
+        "broker": "Marsh McLennan",
+        "renewalDate": "09/05/2025",
+        "premium": "$875K",
+        "ratedPremium": "$920K",
+        "lossRatio": "25%",
+        "appetite": "HIGH",
+        "status": "Active",
+        "triage": 182,
+        "winnability": "Very Strong"
+      },
+      {
+        "id": "4",
+        "companyName": "GreenField Energy Ltd",
+        "type": "Energy Sector",
+        "line": "Environmental Liability",
+        "broker": "Aon Risk",
+        "renewalDate": "07/22/2025",
+        "premium": "$1.2M",
+        "ratedPremium": "$1.4M",
+        "lossRatio": "67%",
+        "appetite": "CAUTIOUS",
+        "status": "Under review",
+        "triage": 158,
+        "winnability": "Medium"
+      }
+    ]
+  }
+}

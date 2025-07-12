@@ -1,0 +1,97 @@
+<section class="performance-metrics">
+  <h2 class="performance-metrics__title">Performance Metrics</h2>
+
+  <div class="performance-metrics__grid" *ngIf="metrics">
+    <article class="metric-card metric-card--winnability">
+      <div class="metric-card__content">
+        <header class="metric-card__header">
+          <p class="metric-card__label">Winnability</p>
+          <div class="metric-card__dots">
+            @for (dot of getDots(metrics.winnability.rating); track $index) {
+            <span class="metric-card__dot"></span>
+            }
+          </div>
+        </header>
+        <div class="metric-card__value metric-card__value--large">
+          {{ metrics.winnability.status }}
+        </div>
+      </div>
+      <footer class="metric-card__footer">
+        <button class="metric-card__link metric-card__link--see-all">
+          See all factors →
+        </button>
+      </footer>
+    </article>
+
+    <article class="metric-card metric-card--loss-ratio">
+      <div class="metric-card__content">
+        <header class="metric-card__header">
+          <p class="metric-card__label">Loss Ratio</p>
+        </header>
+        <div class="metric-card__main">
+          <span class="metric-card__value">
+            {{ metrics.lossRatio.current }}%
+          </span>
+          <span class="metric-card__comparison">
+            vs {{ metrics.lossRatio.target }}% target
+          </span>
+        </div>
+      </div>
+      <footer class="metric-card__footer">
+        <button class="metric-card__link metric-card__link--history">
+          View History →
+        </button>
+      </footer>
+    </article>
+
+    <article class="metric-card metric-card--premium-growth">
+      <div class="metric-card__content">
+        <header class="metric-card__header">
+          <p class="metric-card__label">Premium Growth</p>
+        </header>
+        <div class="metric-card__value">
+          {{ metrics.premiumGrowth.current }}%
+          <span class="metric-card__comparison">YoY increase</span>
+        </div>
+        <div class="metric-card__sublabel">
+          ${{ metrics.premiumGrowth.target }}M vs ${{
+            metrics.premiumGrowth.target * 1.25 | number : "1.0-0"
+          }}M target
+        </div>
+      </div>
+      <footer class="metric-card__footer">
+        <button class="metric-card__link metric-card__link--trend">
+          View trend →
+        </button>
+      </footer>
+    </article>
+
+    @if (exposureItems.length > 0) {
+    <article class="metric-card metric-card--exposure">
+      <header class="metric-card__header">
+        <p class="metric-card__label">Exposure Distribution</p>
+      </header>
+
+      <div class="metric-card__exposures">
+        @for (item of exposureItems;  track $index) {
+        <div class="metric-card__exposure-row">
+          <div class="metric-card__exposure-bar-container">
+            <div class="metric-card__exposure-bar">
+              <div
+                class="metric-card__exposure-fill"
+                [ngClass]="item.class"
+                [style.width.%]="item.value"
+              ></div>
+            </div>
+          </div>
+          <div class="metric-card__exposure-info">
+            <span class="metric-card__exposure-name"> {{ item.label }}: </span>
+            <span class="metric-card__exposure-value"> {{ item.value }}% </span>
+          </div>
+        </div>
+        }
+      </div>
+    </article>
+    }
+  </div>
+</section>

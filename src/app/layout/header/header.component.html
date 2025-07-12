@@ -1,0 +1,15 @@
+@if (data) {
+<div class="header">
+  <h2 class="header__title">
+    Hi {{ data.username }}, welcome! You have {{ data.openTasks }} open tasks.
+  </h2>
+  <div class="header__wrapp">
+    <input
+      class="header__input"
+      type="text"
+      [placeholder]="data.searchPlaceholder"
+    />
+    <div class="header__avatar">{{ data.initials }}</div>
+  </div>
+</div>
+}

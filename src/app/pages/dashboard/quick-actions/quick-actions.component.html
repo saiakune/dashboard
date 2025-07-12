@@ -1,0 +1,11 @@
+<div class="quick-actions">
+  <h2 class="quick-actions__title">{{ title }}</h2>
+  <div class="quick-actions__list">
+    @for (action of actions; track action.id) {
+      <div class="quick-actions__button">
+        {{ action.label }}
+      </div>
+    }
+  </div>
+</div>
+

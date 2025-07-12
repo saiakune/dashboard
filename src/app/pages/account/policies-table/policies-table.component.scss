@@ -1,0 +1,282 @@
+.policies-table-section {
+  margin-bottom: 1rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: var(--fz-23);
+}
+
+.table-controls {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.table__search {
+  background: #232838;
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  color: var(--white);
+  font-size: var(--fz-12);
+  width: 18vw;
+}
+.filter-btn,
+.group-btn {
+  border: 1px solid;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  color: var(--pg-blue);
+  cursor: pointer;
+  font-size: var(--fz-12);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    color: #3b82f6;
+  }
+}
+.policies-header {
+  position: sticky;
+  top: 0;
+  background-color: #252a3d;
+  z-index: 2;
+}
+.table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 1rem 1.5rem 3rem;
+  border: 1px solid var(--bord);
+  background: var(--bg);
+  border-radius: 13px;
+  color: var(--font-light);
+  width: 100%;
+}
+
+.policies-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    font-size: var(--fz-12);
+    color: var(--font-light);
+    padding: 0.6rem;
+  }
+
+  th {
+    text-align: left;
+    text-transform: uppercase;
+    background-color: #252a3d;
+    padding: 0.4rem 0.7rem;
+    white-space: nowrap;
+    color: var(--table-header);
+    font-size: var(--fz-9);
+  }
+}
+
+.policy-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  &:nth-child(even) {
+    background-color: #252a3d;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &:last-of-type {
+    border-bottom: 2px solid #334155;
+  }
+}
+
+.line-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.line-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &.marine-cargo {
+    background: var(--pg-blue);
+  }
+
+  &.general-liability {
+    background: var(--pg-green);
+  }
+
+  &.workers-comp {
+    background: #6a3bf6;
+  }
+
+  &.umbrella {
+    background: var(--pg-red);
+  }
+}
+
+.line-name {
+  color: #ffffff;
+  font-size: var(--fz-14);
+}
+
+.date-cell {
+  font-size: var(--fz-12);
+}
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.status-badge {
+  font-size: var(--fz-30);
+  font-weight: 900;
+  text-transform: uppercase;
+
+  &.active {
+    color: var(--pg-green);
+  }
+
+  &.pending {
+    color: var(--pg-yellow);
+  }
+}
+
+.premium-cell,
+.exposure-cell {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.change-value {
+  font-size: 13px;
+  font-weight: 600;
+
+  &.positive {
+    color: #22c55e;
+  }
+
+  &.negative {
+    color: #ef4444;
+  }
+
+  &.neutral {
+    color: #94a3b8;
+  }
+}
+
+.change-na {
+  color: #64748b;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.loss-ratio-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: var(--fz-12);
+  font-weight: 600;
+  text-transform: uppercase;
+  trxy &.low {
+    background-color: var(--pg-green);
+  }
+
+  &.medium {
+    background-color: var(--pg-yellow);
+    color: #000;
+  }
+
+  &.high {
+    background-color: var(--pg-red);
+  }
+}
+.table-action-button {
+  border: 1px solid var(--white);
+  background: transparent;
+  border-radius: 50%;
+  width: 1.6vw;
+  height: 1.6vw;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &__icon {
+    display: inline-block;
+    transform: translateY(-1px);
+  }
+}
+
+.total-row {
+  border-bottom: 2px solid #334155;
+
+  .total-label,
+  .total {
+    font-size: var(--fz-18);
+    font-weight: 700;
+  }
+
+  .total {
+    font-size: var(--fz-14);
+    font-weight: 700;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .policies-table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+    gap: 0.2em;
+    align-items: stretch;
+  }
+
+  .policies-table {
+    th,
+    td {
+      padding: 0.3rem 0.5rem;
+      font-size: var(--fz-12);
+    }
+  }
+
+  .line-content {
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+  }
+
+  .total-row td {
+    padding: 1.2rem 0.6rem;
+  }
+}

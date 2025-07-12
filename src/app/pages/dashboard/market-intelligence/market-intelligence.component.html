@@ -1,0 +1,21 @@
+<div class="market-intelligence">
+  <h2 class="market-intelligence__title">{{ title }}</h2>
+
+  <ul class="market-intelligence__list">
+    @for (item of items; track item.id; let i = $index) {
+    <li class="market-intelligence__item">
+      <div class="market-intelligence__row">
+        <span
+          class="market-intelligence__dot"
+          [style.background-color]="getDotColor(item.color)"
+        ></span>
+        <span class="market-intelligence__text">
+          {{ item.title }}
+        </span>
+      </div>
+
+      <div class="market-intelligence__divider"></div>
+    </li>
+    }
+  </ul>
+</div>

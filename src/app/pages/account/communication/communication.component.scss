@@ -1,0 +1,218 @@
+.communication {
+  margin-bottom: 2.5rem;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__search-input {
+    background-color: transparent;
+    border: 1px solid #293245;
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+    color: var(--white);
+    font-size: var(--fz-12);
+    width: 15rem;
+  }
+  &__wrapper {
+    border: 1px solid var(--bord);
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 1.3rem 1.5rem;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 0.7rem;
+
+    .communication__controls {
+      .communication__tabs {
+        display: flex;
+        gap: 0.5rem;
+
+        .communication__tab-btn {
+          background: none;
+          border: 1px solid var(--pg-blue);
+          color: var(--pg-blue);
+          font-size: var(--fz-12);
+          font-weight: 600;
+          padding: 0.3rem 1.2rem;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #0062ff;
+          }
+        }
+      }
+    }
+  }
+
+  &__messages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
+
+    .communication__message-card {
+      background: #252a3d;
+      border-radius: 20px;
+      border: 2px solid #1e40af;
+      overflow: hidden;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #334155;
+      }
+
+      .communication__message-status {
+        padding: 1rem 1.2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        .communication__status-badge {
+          padding: 0.3rem 0.7rem;
+          border-radius: 20px;
+          font-size: var(--fz-9);
+          font-weight: 600;
+          background: #1e40af;
+          border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .communication__message-type {
+          font-size: var(--fz-18);
+        }
+      }
+
+      .communication__message-content {
+        padding: 1rem 1.3rem 1.3rem;
+
+        .communication__message-header {
+          margin-bottom: 1rem;
+
+          .communication__message-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: var(--table-header);
+            font-size: var(--fz-12);
+          }
+        }
+
+        .communication__message-body {
+          margin-bottom: 0.5rem;
+
+          .communication__message-text {
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+        }
+
+        .communication__message-footer {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+
+          .communication__attachments-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #3bb97a77;
+
+            font-size: var(--fz-12);
+            border-radius: 20px;
+            padding: 0.3rem 0.7rem;
+
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+
+          .communication__action-buttons {
+            display: flex;
+
+            .communication__reply-btn,
+            .communication__submit-btn {
+              background: var(--pg-blue);
+              color: var(--font-light);
+              border: none;
+              padding: 0.5rem 1.5rem;
+              border-radius: 20px;
+              font-size: 12px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: all 0.2s ease;
+
+              &:hover {
+                background: #2563eb;
+              }
+            }
+
+            .communication__submit-btn {
+              background: var(--pg-green);
+
+              &:hover {
+                background: #16a34a;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch;
+
+      .communication__controls {
+        justify-content: space-between;
+      }
+    }
+
+    &__messages {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+
+      .communication__message-card {
+        margin: 0 -0.5rem;
+
+        .communication__message-status,
+        .communication__message-content {
+          padding: 0 1rem;
+        }
+
+        .communication__message-footer {
+          flex-direction: column;
+          gap: 0.8rem;
+          align-items: stretch;
+
+          .communication__action-buttons {
+            .communication__reply-btn,
+            .communication__submit-btn {
+              width: 100%;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

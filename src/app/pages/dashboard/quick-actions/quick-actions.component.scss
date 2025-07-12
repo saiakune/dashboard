@@ -1,0 +1,39 @@
+.quick-actions {
+  border: 1px solid var(--bord);
+  background: var(--bg);
+  border-radius: 13px;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  color: #ffffff;
+
+  &__title {
+    font-size: var(--fz-23);
+    margin-bottom: 1.66rem;
+    color: var(--font-light);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__button {
+    background: var(--pg-blue);
+    border-radius: 20px;
+    padding: 0.7rem 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--fz-12);
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

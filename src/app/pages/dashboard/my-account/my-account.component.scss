@@ -1,0 +1,233 @@
+.my-accounts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 1rem 1.5rem 2rem;
+  border: 1px solid var(--bord);
+  background: var(--bg);
+  border-radius: 13px;
+  color: var(--font-light);
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &-title {
+      font-size: var(--fz-18);
+    }
+
+    &-tools {
+      display: flex;
+      gap: 0.7vw;
+      align-items: center;
+    }
+  }
+
+  &__search {
+    background: #232838;
+    border: none;
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+    color: var(--white);
+    font-size: var(--fz-12);
+    width: 15rem;
+
+    &::placeholder {
+      color: #596275;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.47vw;
+  }
+
+  &__button {
+    border: 1px solid;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    color: var(--pg-blue);
+    cursor: pointer;
+    font-size: var(--fz-12);
+    &:hover {
+      background: #3a3a55;
+    }
+
+    &--new {
+      background: var(--pg-blue);
+      border: 1px solid var(--pg-blue);
+      color: var(--white);
+    }
+  }
+
+  &__table {
+    width: 100%;
+    thead {
+      position: sticky;
+      top: 0;
+      background-color: #252a3d;
+      z-index: 2;
+    }
+    &-wrapper {
+      flex-grow: 1;
+      min-height: 0;
+      border-collapse: collapse;
+
+      max-height: calc(4 * 68px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
+
+    th {
+      text-align: left;
+      text-transform: uppercase;
+      background-color: #252a3d;
+      padding: 0.4rem 0.7rem;
+      white-space: nowrap;
+      color: var(--table-header);
+      font-size: var(--fz-9);
+    }
+
+    td {
+      font-size: var(--fz-12);
+      color: var(--font-light);
+      padding: 0.6rem;
+
+    }
+
+    tbody tr {
+      border-top: 1px solid #333;
+
+      &:nth-child(even) {
+        background-color: #252a3d;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  &__name {
+    font-size: var(--fz-12);
+  }
+
+  &__type {
+    color: var(--table-header);
+    font-size: var(--fz-9);
+    margin-top: 0.05vw;
+  }
+}
+
+.appetite {
+  width: 100%;
+  font-size: var(--fz-9);
+  display: inline-block;
+  background-color: #1e2b59;
+  color: white;
+  border-radius: 20px;
+  padding: 0.2vw 0.6vw;
+  text-align: center;
+}
+
+.loss-ratio {
+  font-size: var(--fz-9);
+  border-radius: 20px;
+  padding: 0.25vw 0.7vw;
+}
+
+.triage {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--pg-blue);
+  border-radius: 20px;
+  padding: 0.25vw 0.7vw;
+  font-size: var(--fz-9);
+  color: var(--pg-blue);
+}
+
+.winnability {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--pg-blue);
+  border-radius: 20px;
+  padding: 0.25vw 0.7vw;
+  font-size: var(--fz-9);
+  color: var(--pg-blue);
+  gap: 0.26vw;
+
+  &__dots {
+    display: flex;
+    gap: 0.26vw;
+    flex-shrink: 0;
+  }
+
+  &__dot {
+    width: 0.31vw;
+    height: 0.31vw;
+    border-radius: 50%;
+    background-color: var(--pg-blue);
+    flex-shrink: 0;
+  }
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.42vw;
+  height: 0.42vw;
+  border-radius: 50%;
+  margin-right: 0.42vw;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.table-action-button {
+  border: 1px solid var(--white);
+  background: transparent;
+  border-radius: 50%;
+  width: 1.6vw;
+  height: 1.6vw;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &__icon {
+    display: inline-block;
+    transform: translateY(-1px);
+  }
+}

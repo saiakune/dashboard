@@ -1,0 +1,35 @@
+.navigation {
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.9rem;
+
+  &__button {
+    background-color: #0c0f17;
+    padding: 0.7rem 1.1rem;
+    border-radius: 20px;
+    border: 1px solid var(--bord);
+    color: #94a3b8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      color: #1e40af;
+    }
+
+    &:hover {
+      background-color: #1e293b;
+      color: #ffffff;
+    }
+
+    &.active {
+      background-color: #1e40af;
+      color: #ffffff;
+
+      i {
+        color: #ffffff;
+      }
+    }
+  }
+}

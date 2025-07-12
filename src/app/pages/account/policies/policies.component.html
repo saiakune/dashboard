@@ -1,0 +1,22 @@
+<section class="policies-section">
+  <h2 class="policies-section__title">Policies</h2>
+
+  <div class="policies-grid">
+    @for (policy of policies; track policy.id) {
+      <article class="policy-card">
+        <header class="policy-card__header">
+          <span class="policy-card__icon" [style.color]="policy.color">
+            <i [ngClass]="policy.iconClass"></i>
+          </span>
+          <span class="policy-card__type">{{ policy.type }}</span>
+        </header>
+        <div class="policy-card__details">
+          <div class="policy-card__premium">Premium: {{ policy.premium }}</div>
+          <div class="policy-card__effective">
+            Eff.Date: {{ policy.effective || "---" }}
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

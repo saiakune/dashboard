@@ -1,0 +1,77 @@
+<section class="work-queue">
+  <h2 class="work-queue__title">Work Queue</h2>
+
+  @if (isLoading) {
+  <div class="work-queue__loading">Loading data...</div>
+  } @else {
+  <nav class="work-queue__tabs">
+    @for (tab of tabsWithCounts; track tab.id) {
+    <button
+      class="work-queue__tab"
+      [class.work-queue__tab--active]="activeTab === tab.id"
+      (click)="setActiveTab(tab.id)"
+    >
+      <span>{{ tab.label }}</span>
+      @if (tab.count !== undefined) {
+      <span>({{ tab.count }})</span>
+      }
+    </button>
+    }
+  </nav>
+
+  @if (filteredItems.length === 0) {
+  <div class="work-queue__empty">No items to display</div>
+  } @else {
+  <div class="work-queue__table-wrapper">
+    <table class="work-queue__table">
+      <thead class="work-queue__table-head">
+        <tr class="work-queue__table-row work-queue__table-row--head">
+          @for (col of columns; track col.key) {
+          <th class="work-queue__table-head-cell">{{ col.label }}</th>
+          
+          }
+        </tr>
+      </thead>
+      <tbody class="work-queue__table-body">
+        @for (item of filteredItems; track item.id) {
+        <tr class="work-queue__table-row work-queue__table-row--body">
+          <td class="work-queue__table-cell work-queue__table-cell--avatar">
+            <div class="work-queue__avatar">
+              <div class="work-queue__avatar-image">{{ item.avatar }}</div>
+              <div class="work-queue__assignee">{{ item.assignee }}</div>
+            </div>
+          </td>
+          <td class="work-queue__table-cell">{{ item.company }}</td>
+          <td class="work-queue__table-cell">{{ item.type }}</td>
+          <td class="work-queue__table-cell">
+            <span
+              class="work-queue__status"
+              [class.work-queue__status--new]="item.status === 'New'"
+              [class.work-queue__status--pending]="
+                item.status === 'Pending Review'
+              "
+              [class.work-queue__status--completed]="
+                item.status === 'Completed'
+              "
+            >
+              <span
+                class="work-queue__status-dot"
+                [ngStyle]="{ backgroundColor: getStatusColor(item.status) }"
+              ></span>
+              {{ item.status }}
+            </span>
+          </td>
+          <td class="work-queue__table-cell">{{ item.created }}</td>
+          <td>
+            <button class="table-action-button">
+              <span class="table-action-button__icon">⋮</span>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  } }
+</section>

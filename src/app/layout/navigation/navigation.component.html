@@ -1,0 +1,11 @@
+<div class="navigation">
+  <a
+    *ngFor="let item of navItems"
+    [routerLink]="item.link"
+    routerLinkActive="active"
+    class="navigation__button"
+  >
+    <i class="fa" [ngClass]="item.icon"></i>
+    {{ item.label }}
+  </a>
+</div>

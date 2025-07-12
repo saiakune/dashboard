@@ -1,0 +1,109 @@
+<div class="account-page">
+
+  <nav class="breadcrumb-nav">
+    <a href="" class="breadcrumb-link">Dashboard</a>
+    <span class="breadcrumb-separator">//</span>
+    <a href="#" class="breadcrumb-link">Accounts</a>
+    <span class="breadcrumb-separator">//</span>
+    <span class="breadcrumb-current">{{ accountInfo?.companyName  }}</span>
+  </nav>
+
+
+  <header class="account-header" *ngIf="accountInfo">
+    <div class="account-header__left">
+      <div class="account-header__logo">
+        <div class="account-header__logo-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V9H11V7M11,11H13V17H11V11Z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="account-header__info">
+        <h1 class="account-header__company-name">
+          {{ accountInfo.companyName }}
+        </h1>
+
+        <div class="account-header__address-stats">
+          <div class="account-header__company-address">
+            <p>{{ accountInfo.address }}</p>
+            <p>{{ accountInfo.city }}</p>
+          </div>
+
+          <div class="account-header__stats">
+            <div class="account-header__stat">
+              <span class="account-header__stat-label">EXISTING ACCOUNT</span>
+              <span class="account-header__stat-value"
+                >{{ accountInfo.accountNumber }}</span
+              >
+            </div>
+            <div class="account-header__stat">
+              <span class="account-header__stat-label">BROKER</span>
+              <span class="account-header__stat-value"
+                >{{ accountInfo.revenue }}</span
+              >
+            </div>
+            <div class="account-header__stat">
+              <span class="account-header__stat-label">UNDERWRITER</span>
+              <span class="account-header__stat-value"
+                >{{ accountInfo.underwriters }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attention-card" [ngClass]="attentionCard?.color">
+      <div class="attention-card__header">
+        <span class="attention-card__icon">ⓘ</span>
+        <span class="attention-card__title">{{ attentionCard?.title }}</span>
+      </div>
+      <div class="attention-card__content">
+        <div
+          class="attention-card__section"
+          *ngFor="let section of attentionCard?.sections"
+        >
+          <div class="attention-card__section-title">{{ section.title }}</div>
+          <div class="attention-card__section-subtitle">
+            {{ section.subtitle }}
+          </div>
+          <a class="attention-card__section-link" [href]="section.linkUrl">
+            {{ section.linkText }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="performance-metrics">
+    <app-perfomance-metrics></app-perfomance-metrics>
+  </section>
+
+
+  <section class="policies-section">
+    <app-policies></app-policies>
+  </section>
+
+
+  <div class="status-compliance-row">
+    <app-status-compliance></app-status-compliance>
+  </div>
+
+
+  <div class="winnability-row">
+    <app-winnability></app-winnability>
+  </div>
+
+  <section class="communication-section">
+    <app-communication></app-communication>
+  </section>
+
+
+  <section class="policies-table-section">
+    <app-policies-table></app-policies-table>
+  </section>
+</div>

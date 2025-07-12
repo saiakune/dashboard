@@ -1,0 +1,224 @@
+<section class="winnability">
+  <!-- LEFT MENU -->
+  <nav class="winnability__sidebar">
+    <section class="winnability__decision-support">
+      <header class="winnability__decision-support-header">
+        <h3 class="winnability__decision-support-title">Decision Support</h3>
+        <span class="winnability__count-badge winnability__count-badge--decision">{{ decisionItems | activeItemBadge }}</span>
+      </header>
+      <ul class="winnability__decision-support-list">
+        @for (item of decisionItems; track item; let i = $index) {
+          <li class="winnability__decision-support-item" [class.winnability__decision-support-item--active]="item.isActive" (click)="setActiveDecision(i)">
+            <span class="winnability__decision-support-label">{{ item.label }}</span>
+          </li>
+        }
+      </ul>
+    </section>
+
+    <section class="winnability__risk-assessment" *ngIf="winnabilityData">
+      <header class="winnability__risk-assessment-header">
+        <h3 class="winnability__risk-assessment-title">Risk Assessment</h3>
+        <span class="winnability__count-badge">{{ winnabilityData.riskAssessmentBadgeCount }}</span>
+      </header>
+    </section>
+
+    <section class="winnability__documents-compliance" *ngIf="winnabilityData">
+      <header class="winnability__documents-compliance-header">
+        <h3 class="winnability__documents-compliance-title">Documents and Compliance</h3>
+        <span class="winnability__count-badge">{{ winnabilityData.documentsComplianceBadgeCount }}</span>
+      </header>
+    </section>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="winnability__main" *ngIf="winnabilityData">
+    <h2 class="winnability__title">Winnability</h2>
+
+    <section class="winnability__score">
+      <div class="winnability__score-grid">
+        <article class="winnability__score-overall">
+          <h4 class="winnability__score-label">Overall Score</h4>
+          <div class="winnability__confidence-rating">
+            <div class="winnability__score-value">{{ winnabilityData.overallScore }}%</div>
+            <div class="winnability__score-wrapper">
+              @for (star of getStars(4); track star) {
+                <span class="winnability__star winnability__star--filled">★</span>
+              }
+              <span class="winnability__confidence-text">{{ winnabilityData.confidence }}</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="winnability__score-trend">
+          <h4 class="winnability__score-label">Historical Trend</h4>
+          <div class="winnability__trend-chart">
+            <svg width="180" height="40" viewBox="0 0 180 40">
+              <polyline
+                points="0,40 30,30 60,32 90,25 120,28 150,18 180,18 200,15"
+                stroke="#3b82f6"
+                stroke-width="2"
+                fill="none"
+              />
+            </svg>
+            <div class="winnability__chart-labels">
+              <span class="winnability__chart-label">Jan</span>
+              <span class="winnability__chart-label">Feb</span>
+              <span class="winnability__chart-label">Mar</span>
+              <span class="winnability__chart-label">Apr</span>
+              <span class="winnability__chart-label">Now</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="winnability__score-position">
+          <h4 class="winnability__score-label">Position</h4>
+          <div class="winnability__position-bars">
+            <div class="winnability__position-item">
+              <div class="winnability__position-bar">
+                <div
+                  class="winnability__position-fill winnability__position-fill--your-score"
+                  [style.width.%]="winnabilityData.position.yourScore"
+                ></div>
+              </div>
+              <span class="winnability__position-text"
+                >Your score: {{ winnabilityData.position.yourScore }}%</span
+              >
+            </div>
+            <div class="winnability__position-item">
+              <div class="winnability__position-bar">
+                <div
+                  class="winnability__position-fill winnability__position-fill--market-avg"
+                  [style.width.%]="winnabilityData.position.marketAvg"
+                ></div>
+              </div>
+              <span class="winnability__position-text winnability__position-text--market-avg"
+                >Market Avg: {{ winnabilityData.position.marketAvg }}%</span
+              >
+            </div>
+            <div class="winnability__position-item">
+              <div class="winnability__position-bar">
+                <div
+                  class="winnability__position-fill winnability__position-fill--top-competitor"
+                  [style.width.%]="winnabilityData.position.topCompetitor"
+                ></div>
+              </div>
+              <span class="winnability__position-text winnability__position-text--competitor"
+                >Top competitor: {{ winnabilityData.position.topCompetitor }}%</span
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="winnability__factors">
+      <article class="winnability__factors-increasing">
+        <header class="winnability__factors-header">
+          <span class="winnability__factors-icon winnability__factors-icon--increasing">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="12"
+              width="9"
+              viewBox="0 0 384 512"
+            >
+              <path
+                fill="#3bb979"
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+              />
+            </svg>
+          </span>
+          <h3 class="winnability__factors-title">Increasing Winnability</h3>
+        </header>
+        <ul class="winnability__factors-list">
+          @for (factor of winnabilityData.increasingFactors; track factor; let i = $index) {
+            <li class="winnability__factor-row">
+              <span class="winnability__factor-number winnability__factor-number--increasing">{{ i + 1 }}</span>
+              <div class="winnability__factor-content">
+                <span class="winnability__factor-name">{{ factor.name }}</span>
+                <div class="winnability__factor-bar-row">
+                  <div class="winnability__factor-bar-container">
+                    <div
+                      class="winnability__factor-bar winnability__factor-bar--increase"
+                      [style.width.%]="factor.impact"
+                    ></div>
+                  </div>
+                  <span class="winnability__factor-impact">+{{ factor.impact }}%</span>
+                </div>
+              </div>
+            </li>
+          }
+        </ul>
+      </article>
+
+      <article class="winnability__factors-decreasing">
+        <header class="winnability__factors-header">
+          <span class="winnability__factors-icon winnability__factors-icon--decreasing">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="12"
+              width="9"
+              viewBox="0 0 384 512"
+            >
+              <path
+                fill="#fdd261"
+                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+              />
+            </svg>
+          </span>
+          <h3 class="winnability__factors-title">Decreasing Winnability</h3>
+        </header>
+        <ul class="winnability__factors-list">
+          @for (factor of winnabilityData.decreasingFactors; track factor; let i = $index) {
+            <li class="winnability__factor-row">
+              <span class="winnability__factor-number">{{ i + 1 }}</span>
+              <div class="winnability__factor-content">
+                <span class="winnability__factor-name">{{ factor.name }}</span>
+                <div class="winnability__factor-bar-row">
+                  <div class="winnability__factor-bar-container">
+                    <div
+                      class="winnability__factor-bar winnability__factor-bar--decrease"
+                      [style.width.%]="factor.impact"
+                    ></div>
+                  </div>
+                  <span class="winnability__factor-impact">-{{ factor.impact }}%</span>
+                </div>
+              </div>
+            </li>
+          }
+        </ul>
+      </article>
+    </section>
+
+    <section class="winnability__recommendations">
+      <header class="winnability__recommendations-header">
+        <span class="winnability__recommendations-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            width="20"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="#3bb979"
+              d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2l0 82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9l0-107.2c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+            />
+          </svg>
+        </span>
+        <h3 class="winnability__recommendations-title">AI-Powered Recommendations</h3>
+      </header>
+      <ul class="winnability__recommendations-list">
+        @for (rec of winnabilityData.recommendations; track rec) {
+          <li class="winnability__recommendation-item">
+            <div class="winnability__recommendation-content">
+              <h4 class="winnability__recommendation-title">{{ rec.title }}</h4>
+              <p class="winnability__recommendation-description">{{ rec.description }}</p>
+            </div>
+            <button class="winnability__apply-btn" (click)="applyRecommendation(rec)">
+              Apply
+            </button>
+          </li>
+        }
+      </ul>
+    </section>
+  </main>
+</section>

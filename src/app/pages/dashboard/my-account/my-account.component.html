@@ -1,0 +1,93 @@
+<div class="my-accounts">
+  <header class="my-accounts__header">
+    <h2 class="my-accounts__header-title">{{ title }}</h2>
+
+    <div class="my-accounts__header-tools">
+      <input
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchQuery"
+        class="my-accounts__search"
+      />
+
+      <nav class="my-accounts__actions">
+        @for (filter of filters; track $index) {
+        <button class="my-accounts__button">
+          {{ filter }}
+        </button>
+        }
+        <button class="my-accounts__button my-accounts__button--new">
+          + New
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="my-accounts__table-wrapper">
+    <table class="my-accounts__table">
+      <thead>
+        <tr>
+          @for (header of tableHeaders; track $index) {
+          <th>{{ header }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (account of filteredAccounts(); track account.id) {
+        <tr>
+          <td>
+            <div class="account">
+              <strong class="account__name">{{ account.companyName }}</strong>
+              <span class="account__type">{{ account.type }}</span>
+            </div>
+          </td>
+          <td>{{ account.line }}</td>
+          <td>{{ account.broker }}</td>
+          <td>{{ account.renewalDate }}</td>
+          <td style="color: var(--pg-blue)">{{ account.premium }}</td>
+          <td>{{ account.ratedPremium }}</td>
+          <td>
+            <span
+              class="loss-ratio"
+              [style.backgroundColor]="
+                getLossRatioStyles(account.lossRatio).background
+              "
+              [style.color]="getLossRatioStyles(account.lossRatio).color"
+            >
+              {{ account.lossRatio }}
+            </span>
+          </td>
+          <td>
+            <span class="appetite">{{ account.appetite }}</span>
+          </td>
+          <td>
+            <span
+              class="status-dot"
+              [ngStyle]="{ backgroundColor: getStatusColor(account.status) }"
+            ></span>
+            {{ account.status }}
+          </td>
+          <td>
+            <span class="triage">{{ account.triage }}</span>
+          </td>
+          <td>
+            <span class="winnability">
+              <span class="winnability__dots">
+                @for (dot of getWinnabilityDots(account.winnability); track
+                $index) {
+                <span class="winnability__dot"></span>
+                }
+              </span>
+              {{ account.winnability }}
+            </span>
+          </td>
+          <td>
+            <button class="table-action-button">
+              <span class="table-action-button__icon">⋮</span>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

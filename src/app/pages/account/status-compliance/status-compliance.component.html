@@ -1,0 +1,72 @@
+<div class="status-compliance">
+  @if (accountStatus.steps && accountStatus.steps.length) {
+  <section
+    class="status-compliance__section status-compliance__section--account-status"
+  >
+    <h2 class="status-compliance__title">Account Status</h2>
+    <ul class="status-compliance__workflow workflow">
+      @for (step of accountStatus.steps; track $index) {
+      <li class="workflow__step workflow__step--{{ step.status }}">
+        <span class="workflow__circle">
+          @if (step.status === 'completed') {
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="workflow__icon"
+          >
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+          }
+        </span>
+        <span class="workflow__label">{{ step.name }}</span>
+        @if ($index < accountStatus.steps.length - 1)
+        {
+        <span
+          class="workflow__connector workflow__connector--{{ step.status }}"
+        ></span>
+        }
+      </li>
+      }
+    </ul>
+  </section>
+  } @if (accountStatus.steps.length > 0) {
+  <section
+    class="status-compliance__section status-compliance__section--compliance"
+  >
+    <header class="status-compliance__header">
+      <h2 class="status-compliance__title">Compliance & Documentation</h2>
+      <button
+        class="status-compliance__history-btn"
+        type="button"
+        (click)="showHistory()"
+      >
+        See History →
+      </button>
+    </header>
+    <ul class="status-compliance__grid compliance-grid">
+      @for (item of complianceItems; track item) {
+      <li
+        class="compliance-grid__item compliance-grid__item--{{ item.status }}"
+      >
+        <span class="compliance-grid__indicator">
+          @if (item.status === 'completed') {
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="compliance-grid__icon"
+          >
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+          }
+        </span>
+        <span class="compliance-grid__label">{{ item.name }}</span>
+      </li>
+      }
+    </ul>
+  </section>
+  }
+</div>

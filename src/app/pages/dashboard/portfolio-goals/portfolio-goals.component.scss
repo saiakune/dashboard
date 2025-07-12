@@ -1,0 +1,122 @@
+.portfolio-goals {
+  border: 1px solid var(--bord);
+  background: var(--bg);
+  border-radius: 13px;
+  color: var(--white);
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+
+  &__title {
+    font-size: var(--fz-23);
+    margin-bottom: 1.8rem;
+    color: var(--font-light);
+  }
+
+  &__item {
+    margin-bottom: 1rem;
+
+    &-title {
+      font-size: var(--fz-12);
+      color: var(--table-header);
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__multibar {
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 1.5rem;
+
+    &-segment {
+      flex-grow: 1;
+      height: 100%;
+
+      &.green {
+        background-color: var(--pg-green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--fz-12);
+        font-weight: 600;
+      }
+
+      &.yellow {
+        background-color: var(--pg-yellow);
+        width: 20%;
+      }
+
+      &.red {
+        background-color: var(--pg-red);
+        width: 30%;
+      }
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    align-items: center;
+    margin-top: 0.7rem;
+
+    & > span {
+      font-size: var(--fz-9);
+      margin-right: 0.4vw;
+    }
+  }
+
+  &__arrow-up {
+    color: var(--pg-green);
+    font-weight: bold;
+  }
+
+  &__tg {
+    color: var(--table-header);
+  }
+
+  &__status-line {
+    margin-top: 0.4vw;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+  }
+
+  &__delta {
+    color: var(--pg-green);
+    font-size: var(--fz-12);
+  }
+
+  &__status {
+    font-size: var(--fz-12);
+    color: var(--pg-green);
+  }
+
+  &__progressbar {
+    background-color: #2a2f3b;
+    border-radius: 0 100px 100px 0;
+    height: 1.56rem;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    
+
+    &-fill {
+      background: linear-gradient(90deg, #313853, var(--pg-blue));
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 100px 100px 0;
+      font-size: var(--fz-12);
+      font-weight: bold;
+    }
+  }
+
+  &__progressbar-percentage {
+    text-align: right;
+    margin-top: 0.313vw;
+    font-size: var(--fz-12);
+  }
+}

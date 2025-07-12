@@ -1,0 +1,61 @@
+<section class="dashboard">
+  <div class="dashboard__work">
+    <app-work-queue></app-work-queue>
+  </div>
+  <div class="dashboard__goal">
+    <app-portfolio-goals></app-portfolio-goals>
+  </div>
+  <div class="dashboard__quick">
+    <app-quick-actions></app-quick-actions>
+  </div>
+  <div class="dashboard__mark"><app-market-intelligence></app-market-intelligence></div>
+
+  <div class="dashboard__account">
+    <app-my-account></app-my-account>
+  </div>
+</section>
+
+<!-- <div class="dashboard-container">
+  <app-header></app-header>
+
+  <main class="dashboard-main">
+    <div class="welcome-message">
+      <h1>{{ welcomeMessage }}</h1>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="work-queue-section">
+        <app-work-queue [tabs]="workQueue.tabs" [items]="workQueue.items">
+        </app-work-queue>
+      </div>
+
+      <div class="portfolio-goals-section">
+        <app-portfolio-goals
+          [newBusinessTarget]="portfolioGoals.newBusinessTarget"
+          [renewalTarget]="portfolioGoals.renewalTarget"
+        >
+        </app-portfolio-goals>
+      </div>
+
+      <div class="quick-actions-section">
+        <app-quick-actions [actions]="quickActions"> </app-quick-actions>
+      </div>
+
+      <div class="market-intelligence-section">
+        <app-market-intelligence
+          [title]="marketIntelligence.title"
+          [items]="marketIntelligence.items"
+        >
+        </app-market-intelligence>
+      </div>
+
+      <div class="my-accounts-section">
+        <app-my-account
+          [filters]="myAccounts.filters"
+          [accounts]="myAccounts.accounts"
+        >
+        </app-my-account>
+      </div>
+    </div>
+  </main>
+</div> -->

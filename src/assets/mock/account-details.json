@@ -1,0 +1,273 @@
+{
+  "accountInfo": {
+    "companyName": "Maritime Logistics Corp",
+    "address": "440 Harbor Boulevard Suite 500",
+    "city": "Seattle, WA 98104",
+    "accountNumber": "5385",
+    "revenue": "MARINE PLACEMENT",
+    "underwriters": "Kelly Johnson"
+  },
+  "attentionCard": {
+    "title": "Needs Attention",
+    "color": "warning",
+    "sections": [
+      {
+        "title": "Marine Survey Required",
+        "subtitle": "Scheduled for 06/12/2025",
+        "linkText": "Review details link →",
+        "linkUrl": "#"
+      },
+      {
+        "title": "Loss Control Complete",
+        "subtitle": "Last inspection: 02/15/2025",
+        "linkText": "View report →",
+        "linkUrl": "#"
+      },
+      {
+        "title": "Claims Review Required",
+        "subtitle": "3 open claims  // $245,000 TTL",
+        "linkText": "View claims →",
+        "linkUrl": "#"
+      }
+    ]
+  },
+  "performanceMetrics": {
+    "winnability": {
+      "status": "Very Strong",
+      "rating": 4
+    },
+    "lossRatio": {
+      "current": 25,
+      "target": 42,
+      "status": "good"
+    },
+    "premiumGrowth": {
+      "current": 12.4,
+      "target": 123
+    },
+    "exposureDistribution": {
+      "marineCargo": 71.6,
+      "generalLiability": 20.3,
+      "workersComp": 8.1,
+      "other": 0
+    }
+  },
+  "policies": [
+    {
+      "id": "1",
+      "type": "Marine Cargo",
+      "premium": "$625,000",
+      "effective": "6/30/2026",
+      "statusColor": "green"
+    },
+    {
+      "id": "2",
+      "type": "General Liability",
+      "premium": "$175,000",
+      "effective": "6/30/2026",
+      "statusColor": "green"
+    },
+    {
+      "id": "3",
+      "type": "Workers Comp",
+      "premium": "$75,000",
+      "effective": "---",
+      "statusColor": "blue"
+    },
+    {
+      "id": "4",
+      "type": "Property",
+      "premium": "$64,829.83",
+      "effective": "---",
+      "statusColor": "green"
+    },
+    {
+      "id": "5",
+      "type": "Umbrella",
+      "premium": "$275,000",
+      "effective": "13/03/2026",
+      "statusColor": "green"
+    }
+  ],
+  "accountStatus": {
+    "steps": [
+      { "name": "Submitted", "status": "completed" },
+      { "name": "Review", "status": "completed" },
+      { "name": "Quote", "status": "completed" },
+      { "name": "Bind", "status": "completed" },
+      { "name": "Issue", "status": "completed" },
+      { "name": "Renew", "status": "pending" }
+    ]
+  },
+  "complianceItems": [
+    { "name": "KYC verification", "status": "completed" },
+    { "name": "Required Documentation", "status": "completed" },
+    { "name": "Regulatory approval", "status": "completed" },
+    { "name": "Financial verification", "status": "completed" }
+  ],
+  "winnability": {
+    "overallScore": 82,
+    "confidence": "Very Strong",
+    "position": {
+      "yourScore": 82,
+      "marketAvg": 65,
+      "topCompetitor": 78
+    },
+    "decisionItems": [
+      {
+        "label": "Winnability",
+        "isActive": true,
+        "badgeCount": 4
+      },
+      {
+        "label": "Exposure Review & Suggested Controls",
+        "isActive": false,
+        "badgeCount": 0
+      },
+      {
+        "label": "Portfolio Strategy Alignment",
+        "isActive": false,
+        "badgeCount": 0
+      },
+      {
+        "label": "Broker Analytics",
+        "isActive": false,
+        "badgeCount": 0
+      }
+    ],
+    "riskAssessmentBadgeCount": 6,
+    "documentsComplianceBadgeCount": 2,
+    "increasingFactors": [
+      { "name": "Broker relationship", "impact": 24 },
+      { "name": "Loss history", "impact": 22 },
+      { "name": "Industry growth", "impact": 18 },
+      { "name": "Maritime opportunity", "impact": 16 }
+    ],
+    "decreasingFactors": [
+      { "name": "Premium pricing", "impact": 24 },
+      { "name": "Total exposure", "impact": 18 },
+      { "name": "Loss ratio trend", "impact": 14 },
+      { "name": "Market competition", "impact": 12 }
+    ],
+    "recommendations": [
+      {
+        "title": "Offer 5% premium discount in exchange for 3-year commitment",
+        "description": "Historical data shows 85% probability that this will lead to 12% above-market profitability and create an opportunity to expand with higher-profit segments.",
+        "type": "premium"
+      },
+      {
+        "title": "Propose risk control services for cargo handling procedures",
+        "description": "Risk assessment shows 70% reduction in cargo damage through implementation of specialized protocols. This approach would significantly address the most frequent claim scenarios.",
+        "type": "risk"
+      }
+    ]
+  },
+  "communications": [
+    {
+      "id": "1",
+      "type": "Policy Renewal",
+      "subject": "Auto Insurance 5/15/25",
+      "sender": "Marine",
+      "content": "Hello! I am reaching out regarding the upcoming auto insurance renewal for Quinze, LLC. The current policy expires on 5/20/2025. Would you like to renew coverage options? Below is a quote with the same terms for you to review.",
+      "date": "Apr 5",
+      "attachments": 3,
+      "hasReply": true,
+      "status": "new",
+      "badge": "NEW"
+    },
+    {
+      "id": "2",
+      "type": "New Submission",
+      "subject": "BPM Real Estate - EFF 4/1/24",
+      "sender": "Isabel",
+      "content": "Arthur attached please find our submission for the above mentioned insured. We are pleased to present you with a submission for this client - BPM Real Estate Group.",
+      "date": "Mar 25",
+      "attachments": 5,
+      "hasReply": true,
+      "status": "responded",
+      "badge": "Responded"
+    },
+    {
+      "id": "3",
+      "type": "New Quote Request",
+      "subject": "Workers Comp Insurance",
+      "sender": "Sara",
+      "content": "Hi Arthur, Real Estate Group has expressed interest in adding workers compensation coverage to their insurance portfolio. I've completed the materials assessment based...",
+      "date": "Apr 5",
+      "attachments": 3,
+      "hasReply": false,
+      "status": "new",
+      "badge": "NEW"
+    },
+    {
+      "id": "4",
+      "type": "New Quote Request",
+      "subject": "Workers Comp Insurance",
+      "sender": "Joshua",
+      "content": "Hello Arthur, I am pleased to present you with a submission on this client",
+      "date": "Apr 5",
+      "attachments": 3,
+      "hasReply": false,
+      "status": "",
+      "badge": "NEW"
+    }
+  ],
+  "policiesTable": [
+    {
+      "line": "Marine Cargo",
+      "inception": "01/01/2025",
+      "expiration": "31/01/2027",
+      "status": "Active",
+      "exposurePremium": "$485,000",
+      "premium": "$697,500",
+      "renewal": "$27,000",
+      "tech": "$270,000",
+      "prem": "$85,000",
+      "percentChange": 3.5,
+      "lossRatio": "22"
+    },
+    {
+      "line": "General Liability",
+      "inception": "01/01/2025",
+      "expiration": "31/01/2027",
+      "status": "Active",
+      "exposurePremium": "$165,000",
+      "premium": "$360,000",
+      "renewal": "$267,000",
+      "tech": "$60,000",
+      "prem": "$175,000",
+      "percentChange": 6.1,
+      "lossRatio": "55"
+    },
+    {
+      "line": "Workers Comp",
+      "inception": "Pending",
+      "expiration": "Pending",
+      "status": "Pending",
+      "exposurePremium": "$0",
+      "premium": "$73,500",
+      "renewal": "$267,000",
+      "tech": "$290,000",
+      "prem": "$5,000",
+      "percentChange": null,
+      "lossRatio": null
+    },
+    {
+      "line": "Umbrella",
+      "inception": "01/01/2025",
+      "expiration": "31/01/2027",
+      "status": "Active",
+      "exposurePremium": "$250,000",
+      "premium": "$245,000",
+      "renewal": "$267,000",
+      "tech": "$270,000",
+      "prem": "$275,000",
+      "percentChange": -0.1,
+      "lossRatio": "78"
+    }
+  ],
+  "totals": {
+    "totalPremium": "$5,993,400",
+    "totalChange": "6.4%"
+  }
+}

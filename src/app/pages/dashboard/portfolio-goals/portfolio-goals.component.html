@@ -1,0 +1,86 @@
+<div class="portfolio-goals">
+  <h2 class="portfolio-goals__title">Portfolio goals</h2>
+
+  <div class="portfolio-goals__list">
+    <div *ngFor="let goal of goals" class="portfolio-goals__item" >
+      <div class="portfolio-goals__item-title">{{ goal.title }}</div>
+
+      <div class="portfolio-goals__item-bar" [ngSwitch]="goal.title">
+        <ng-container *ngSwitchCase="'PORTFOLIO LOSS RATIO TARGET'">
+          <div class="portfolio-goals__multibar">
+            <div
+              class="portfolio-goals__multibar-segment green"
+              [style.width]="goal.percentage + '%'"
+            >
+              <span class="portfolio-goals__multibar-value">{{
+                goal.value
+              }}</span>
+            </div>
+            <div class="portfolio-goals__multibar-segment yellow"></div>
+            <div class="portfolio-goals__multibar-segment red"></div>
+          </div>
+
+          <div class="portfolio-goals__arrows">
+            <span class="portfolio-goals__arrow-up">▲</span>
+            <span class="portfolio-goals__tg">TG: {{ goal.target }}</span>
+          </div>
+
+          <div class="portfolio-goals__status-line" *ngIf="goal.status">
+            <span class="portfolio-goals__delta"
+              >-6.8% (<span
+                class="portfolio-goals__status"
+                [ngClass]="getStatusClass(goal.status)"
+                >{{ goal.status }}</span
+              >)</span
+            >
+          </div>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'RENEWAL RETENTION'">
+          <div class="portfolio-goals__multibar">
+            <div class="portfolio-goals__multibar-segment red"></div>
+            <div class="portfolio-goals__multibar-segment yellow"></div>
+            <div
+              class="portfolio-goals__multibar-segment green"
+              [style.width]="goal.percentage + '%'"
+            >
+              <span class="portfolio-goals__multibar-value">{{
+                goal.value
+              }}</span>
+            </div>
+          </div>
+
+          <div class="portfolio-goals__arrows">
+            <span class="portfolio-goals__arrow-up">▲</span>
+            <span class="portfolio-goals__tg">TG: {{ goal.target }}</span>
+          </div>
+
+          <div class="portfolio-goals__status-line" *ngIf="goal.status">
+            <span
+              class="portfolio-goals__status"
+              [ngClass]="getStatusClass(goal.status)"
+              >{{ goal.status }}</span
+            >
+          </div>
+        </ng-container>
+
+
+        <ng-container *ngSwitchDefault>
+          <div class="portfolio-goals__progressbar">
+            <div
+              class="portfolio-goals__progressbar-fill"
+              [style.width]="goal.percentage + '%'"
+            >
+              <span class="portfolio-goals__progressbar-value">
+                {{ goal.value }} / {{ goal.target }}
+              </span>
+            </div>
+          </div>
+          <div class="portfolio-goals__progressbar-percentage">
+            {{ goal.percentage | number : "1.0-0" }}%
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

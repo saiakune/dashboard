@@ -1,0 +1,215 @@
+.account-page {
+  padding: 1.5REM;
+  color: var(--font-light);
+  min-height: 100vh;
+
+  // Breadcrumb Navigation
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: var(--fz-12);
+
+    .breadcrumb-link {
+      text-decoration: none;
+      transition: color 0.2s ease;
+      &:hover {
+        color: #2563eb;
+      }
+    }
+
+    .breadcrumb-current {
+      color: var(--pg-blue);
+    }
+  }
+
+  // Account Header
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin: 20px 0 38px;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    &__logo-circle {
+      width: 6.5vmax;
+      height: 6.5vmax;
+      border-radius: 50%;
+      background: var(--pg-blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &__company-name {
+      font-size: var(--fz-26);
+      font-weight: 300;
+      margin: 0;
+    }
+
+    &__address-stats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    &__company-address p {
+      font-size: var(--fz-12);
+      margin: 0;
+    }
+
+    &__stats {
+      display: flex;
+      gap: 2rem;
+      font-size: var(--fz-12);
+
+      & > * {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &__stat-label {
+      font-size: var(--fz-12);
+      color: var(--table-header);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+  }
+
+  .attention-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid var(--pg-yellow);
+    background: var(--bg);
+    border-radius: 13px;
+    padding: 1.3rem;
+
+    &__header {
+      color: var(--pg-yellow);
+      display: flex;
+      gap: 0.7rem;
+      margin-bottom: 1.9rem;
+      font-size: var(--fz-18);
+    }
+
+    &__content {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    &__section {
+      &-subtitle {
+        font-size: var(--fz-12);
+        color: var(--table-header);
+      }
+
+      &-link {
+        color: var(--pg-blue);
+        cursor: pointer;
+      }
+    }
+  }
+  // Section Spacing
+  .performance-metrics,
+  .policies-section,
+  .communication-section,
+  .policies-table-section {
+    margin-bottom: 32px;
+  }
+
+  // Status and Compliance Row
+  .status-compliance-row {
+    margin-bottom: 32px;
+  }
+
+  // Winnability Row
+  .winnability-row {
+    margin-bottom: 32px;
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    padding: 16px;
+
+    .account-header {
+      flex-direction: column;
+      gap: 20px;
+      align-items: stretch;
+      padding: 16px 20px;
+
+      .account-meta {
+        align-items: stretch;
+
+        .account-badges {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+
+          .badge {
+            min-width: auto;
+            flex: 1;
+            min-width: 120px;
+          }
+        }
+
+        .account-stats {
+          justify-content: space-between;
+          gap: 16px;
+
+          .stat-item {
+            align-items: flex-start;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .status-compliance-row {
+      // No special handling needed - component handles its own responsive layout
+    }
+
+    .winnability-row {
+      // No special responsive handling needed
+    }
+  }
+
+  @media (max-width: 768px) {
+    .account-header {
+      .account-info {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .account-meta .account-stats {
+        flex-direction: column;
+        gap: 12px;
+
+        .stat-item {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
